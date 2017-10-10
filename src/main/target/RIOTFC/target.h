@@ -22,29 +22,14 @@
 #define CONFIG_START_FLASH_ADDRESS 0x08080000 //0x08080000 to 0x080A0000 (FLASH_Sector_8)
 
 #define USBD_PRODUCT_STRING "Riot FC"
-/*
-#ifdef OPBL
-	#define USBD_SERIALNUMBER_STRING "0x8020000"
-#endif
-*/
 
 /*	LED Pin Configuration	*/
-#define LED0                    PB5
-#define LED1                    PB4
-#define LED2                    PB6
+#define LED0_PIN                    PB5
+#define LED1_PIN                    PB4
+#define LED2_PIN                    PB6
 
 
-#define INVERTER_PIN_USART6 	PC6
-#define INVERTER_USART          USART6
-
-// MPU9250 interrupt
-// Need to test and see if neccessary
-#define USE_EXTI
-#define MPU_INT_EXTI            PC5
-#define EXTI_CALLBACK_HANDLER_COUNT 1 // MPU data ready
-//#define DEBUG_MPU_DATA_READY_INTERRUPT
-#define USE_MPU_DATA_READY_SIGNAL
-#define ENSURE_MPU_DATA_READY_IS_LOW
+#define INVERTER_PIN_UART6 	PC6
 
 /*	Legacy ACC/GYRO Configuration	*/
 /*	MPU6500 ACC/GYRO				*/
@@ -79,18 +64,10 @@
 #define USE_GYRO_SPI_MPU6000
 #define GYRO_MPU6000_ALIGN      CW270_DEG
 
-/*	Preset Roll/Pitch/Yaw
-#define defaultRoll		0
-#define defaultPitch	180
-#define defaultYaw		270
-*/
-
-
 /*	Barometer Configuration	*/
 #define BARO
 #define USE_BARO_MS5611
 #define MS5611_I2C_INSTANCE I2CDEV_1
-
 
 /*	SD CARD Configuration Information	*/
 #define ENABLE_BLACKBOX_LOGGING_ON_SDCARD_BY_DEFAULT
@@ -146,23 +123,26 @@
 
 /*	I2C Devices	*/
 #define USE_I2C
+#define USE_I2C_DEVICE_1
 #define I2C_DEVICE              (I2CDEV_1)
-//#define I2C_DEVICE_EXT          (I2CDEV_2)
 
-///	MS5611 I2C Pins
+//	MS5611 I2C Pins
 #define I2C1_SCL                PB8
 #define I2C1_SDA                PB9
 
 /*	ADC Configuration	*/
 #define USE_ADC
-#define VBAT_SCALE_DEFAULT      53 
+#define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
+#define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
+#define VBAT_SCALE_DEFAULT      53
+#define CURRENT_METER_SCALE_DEFAULT 240
 #define BOARD_HAS_VOLTAGE_DIVIDER
 
 #define CURRENT_METER_ADC_PIN       PC2
-#define CURRENT_METER_ADC_CHANNEL   ADC_Channel_12
+//#define CURRENT_METER_ADC_CHANNEL   ADC_Channel_12
 
 #define VBAT_ADC_PIN           PC3
-#define VBAT_ADC_CHANNEL       ADC_Channel_13
+//#define VBAT_ADC_CHANNEL       ADC_Channel_13
 
 
 /*	LED Strip Driver Configuration	*/
@@ -183,7 +163,7 @@
 
 /* Default Configuration Information	*/	
 #define TELEMETRY
-#define DEFAULT_FEATURES        (FEATURE_LED_STRIP | FEATURE_AIRMODE | FEATURE_TELEMETRY)
+#define DEFAULT_FEATURES        (FEATURE_LED_STRIP | FEATURE_AIRMODE | FEATURE_TELEMETRY | FEATURE_ANTI_GRAVITY | FEATURE_DYNAMIC_FILTER)
 #define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
 #define SERIALRX_PROVIDER       SERIALRX_SBUS
 #define SERIALRX_UART           SERIAL_PORT_USART6

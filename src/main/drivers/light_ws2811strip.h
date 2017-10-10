@@ -19,7 +19,7 @@
 
 #include "drivers/io_types.h"
 
-#define WS2811_LED_STRIP_LENGTH    32
+#define WS2811_LED_STRIP_LENGTH    35
 #define WS2811_BITS_PER_LED        24
 // for 50us delay
 #define WS2811_DELAY_BUFFER_LENGTH 42

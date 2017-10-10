@@ -420,6 +420,13 @@ static bool mspCommonProcessOutCommand(uint8_t cmdMSP, sbuf_t *dst, mspPostProce
         sbufWriteData(dst, buildTime, BUILD_TIME_LENGTH);
         sbufWriteData(dst, shortGitRevision, GIT_SHORT_REVISION_LENGTH);
         break;
+		
+	case MSP_IDENT:
+        sbufWriteU8(dst, MW_VERSION);
+        sbufWriteU8(dst, mixerConfig()->mixerMode);
+        sbufWriteU8(dst, MSP_PROTOCOL_VERSION);
+        sbufWriteU32(dst, CAP_DYNBALANCE); // "capability"
+        break;
 
     case MSP_REBOOT:
         if (mspPostProcessFn) {

@@ -231,7 +231,8 @@
 //
 
 // See MSP_API_VERSION and MSP_MIXER_CONFIG
-//DEPRECATED - #define MSP_IDENT                100    //out message         mixerMode + multiwii version + protocol version + capability variable
+//DEPRECATED - 
+#define MSP_IDENT                100    //out message         mixerMode + multiwii version + protocol version + capability variable
 
 
 #define MSP_STATUS               101    //out message         cycletime & errors_count & sensor present & box activation & current setting number

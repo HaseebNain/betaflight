@@ -24,7 +24,8 @@
 #define STR(x) STR_HELPER(x)
 #define FC_VERSION_STRING STR(FC_VERSION_MAJOR) "." STR(FC_VERSION_MINOR) "." STR(FC_VERSION_PATCH_LEVEL)
 
-#define MW_VERSION              231
+#define MW_VERSION              232
+#define FC_CONCAT_VERSION       320
 
 extern const char* const targetName;
 

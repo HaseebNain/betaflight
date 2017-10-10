@@ -15,10 +15,22 @@
  * along with Cleanflight.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define FC_VERSION_THRUST_DEV_LEVEL_MAJOR 1 //increment when a significant change is made
+#define FC_VERSION_THRUST_DEV_LEVEL_MAJOR 2 //increment when a significant change is made
 #define FC_VERSION_THRUST_DEV_LEVEL_MINOR 1 //increment when a bug is fixed
 
 /* Version Log
+Version 2.1
+Updated for Production Line
+ - LED count has been updated to account for HW update
+ 
+Version 2.0
+3.2 Betaflight
+ - New Tune
+ - All of the features of Betaflight 3.2
+ - Working with the new Configurator
+ - Battery Monitoring
+ - Red LEDs preset to differentiate
+
 Version 1.1
 Enabled SDCard Ability
  -Enabled SDCard Usage

@@ -101,64 +101,62 @@
 // Default Settings for the RiotFC rev 1.802c
 void targetConfiguration(void)
 {
+	
+	//char myName[16] = "Riot 250R Pro";
+	// Craft Name
+	//memset(pilotConfigMutable()->name, 0, ARRAYLEN(pilotConfig()->myName));
+	//pilotConfigMutable()->name = myName;
+	
 	// Motor Configurations
 	// 3 = PWM_TYPE_MULTISHOT
 	motorConfigMutable()->dev.motorPwmProtocol = 3;
 	motorConfigMutable()->minthrottle = 1040;
 	
-	//Smartport Configurations
-	//telemetryConfigMutable()->dev.telemetry_inversion = 0;
-	//telemetryConfigMutable()->dev.sportHalfDuplex = 0;
+	
+	telemetryConfigMutable()->halfDuplex = 0;
+    telemetryConfigMutable()->telemetry_inverted = 0;
 	
 	// Barometer Configuration
-	//config->barometerConfig.baro_hardware = 3;
-
+	/// Barometer can be enabled by end user if so desired, off by default.
+	barometerConfigMutable()->baro_hardware = BARO_NONE;
 	
 	// Motor Board Allignment Configurations
     boardAlignmentMutable()->rollDegrees = 0;
 	boardAlignmentMutable()->pitchDegrees = 180;
 	boardAlignmentMutable()->yawDegrees = 270;
 	
+	// Gyro Notch Filter Configurations
+	gyroConfigMutable()->gyro_soft_notch_hz_1 = 0;
+    gyroConfigMutable()->gyro_soft_notch_hz_2 = 0;
+	
+	
 	// Battery Configurations
 	voltageSensorADCConfigMutable(VOLTAGE_SENSOR_ADC_VBAT)->vbatscale = 53;
-	currentSensorADCConfigMutable()->scale = 250;
+	currentSensorADCConfigMutable()->scale = 240;
 	
 	// PID Configuration set to 8KHz
 	pidConfigMutable()->pid_process_denom = 1;
-
+	
 	
 	
 	// PID Profiile Configurations
+	pidProfilesMutable(0)->pid[PID_ROLL].P = 42;
+    pidProfilesMutable(0)->pid[PID_ROLL].I = 47;
+    pidProfilesMutable(0)->pid[PID_ROLL].D = 25;
+    pidProfilesMutable(0)->pid[PID_PITCH].P = 60;
+    pidProfilesMutable(0)->pid[PID_PITCH].I = 53;
+    pidProfilesMutable(0)->pid[PID_PITCH].D = 27;
+    pidProfilesMutable(0)->pid[PID_YAW].P = 80;
+    pidProfilesMutable(0)->pid[PID_YAW].I = 55;
 	
-	pidProfilesMutable(0)->P8[ROLL] = 43;
-	pidProfilesMutable(0)->I8[ROLL] = 50;
-	pidProfilesMutable(0)->D8[ROLL] = 20;
-	pidProfilesMutable(0)->P8[PITCH] = 60;
-	pidProfilesMutable(0)->I8[PITCH] = 55;
-	pidProfilesMutable(0)->D8[PITCH] = 19;
-	pidProfilesMutable(0)->P8[YAW] = 80;
-	pidProfilesMutable(0)->I8[YAW] = 55;
-	pidProfilesMutable(0)->D8[YAW] = 20;
-	pidProfilesMutable(0)->P8[PIDALT] = 50;
-	pidProfilesMutable(0)->I8[PIDALT] = 0;
-	pidProfilesMutable(0)->D8[PIDALT] = 0;
-	pidProfilesMutable(0)->P8[PIDPOS] = 15;   
-	pidProfilesMutable(0)->I8[PIDPOS] = 0;    
-	pidProfilesMutable(0)->D8[PIDPOS] = 0;
-	pidProfilesMutable(0)->P8[PIDPOSR] = 34;  
-	pidProfilesMutable(0)->I8[PIDPOSR] = 14;  
-	pidProfilesMutable(0)->D8[PIDPOSR] = 53;  
-	pidProfilesMutable(0)->P8[PIDNAVR] = 25;  
-	pidProfilesMutable(0)->I8[PIDNAVR] = 33;  
-	pidProfilesMutable(0)->D8[PIDNAVR] = 83;  
-	pidProfilesMutable(0)->P8[PIDLEVEL] = 50;
-	pidProfilesMutable(0)->I8[PIDLEVEL] = 50;
-	pidProfilesMutable(0)->D8[PIDLEVEL] = 100;
-	pidProfilesMutable(0)->P8[PIDMAG] = 40;
-	pidProfilesMutable(0)->P8[PIDVEL] = 55;
-	pidProfilesMutable(0)->I8[PIDVEL] = 55;
-	pidProfilesMutable(0)->D8[PIDVEL] = 75;
+	pidProfilesMutable(0)->itermAcceleratorGain = 5000;
+	pidProfilesMutable(0)->dterm_filter_type = 0;
+	
+	// Control Rate Configurations
+	controlRateProfilesMutable(0)->rcExpo8 = 10;
+    controlRateProfilesMutable(0)->rcYawExpo8 = 10;
 
+	
 	
 	// Preset Port assignments
 	serialConfigMutable()->portConfigs[0].identifier = serialPortIdentifiers[0];
