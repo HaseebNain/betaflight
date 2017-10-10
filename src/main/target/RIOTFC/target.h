@@ -147,6 +147,7 @@
 /*	I2C Devices	*/
 #define USE_I2C
 #define I2C_DEVICE              (I2CDEV_1)
+#define USE_I2C_DEVICE_1
 //#define I2C_DEVICE_EXT          (I2CDEV_2)
 
 ///	MS5611 I2C Pins

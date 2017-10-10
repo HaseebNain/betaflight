@@ -128,36 +128,36 @@ void targetConfiguration(void)
 
 	
 	
-	// PID Profiile Configurations
+	// PID Profile Configurations
 	
-	pidProfilesMutable(0)->P8[ROLL] = 43;
-	pidProfilesMutable(0)->I8[ROLL] = 50;
-	pidProfilesMutable(0)->D8[ROLL] = 20;
-	pidProfilesMutable(0)->P8[PITCH] = 60;
-	pidProfilesMutable(0)->I8[PITCH] = 55;
-	pidProfilesMutable(0)->D8[PITCH] = 19;
-	pidProfilesMutable(0)->P8[YAW] = 80;
-	pidProfilesMutable(0)->I8[YAW] = 55;
-	pidProfilesMutable(0)->D8[YAW] = 20;
-	pidProfilesMutable(0)->P8[PIDALT] = 50;
-	pidProfilesMutable(0)->I8[PIDALT] = 0;
-	pidProfilesMutable(0)->D8[PIDALT] = 0;
-	pidProfilesMutable(0)->P8[PIDPOS] = 15;   
-	pidProfilesMutable(0)->I8[PIDPOS] = 0;    
-	pidProfilesMutable(0)->D8[PIDPOS] = 0;
-	pidProfilesMutable(0)->P8[PIDPOSR] = 34;  
-	pidProfilesMutable(0)->I8[PIDPOSR] = 14;  
-	pidProfilesMutable(0)->D8[PIDPOSR] = 53;  
-	pidProfilesMutable(0)->P8[PIDNAVR] = 25;  
-	pidProfilesMutable(0)->I8[PIDNAVR] = 33;  
-	pidProfilesMutable(0)->D8[PIDNAVR] = 83;  
-	pidProfilesMutable(0)->P8[PIDLEVEL] = 50;
-	pidProfilesMutable(0)->I8[PIDLEVEL] = 50;
-	pidProfilesMutable(0)->D8[PIDLEVEL] = 100;
-	pidProfilesMutable(0)->P8[PIDMAG] = 40;
-	pidProfilesMutable(0)->P8[PIDVEL] = 55;
-	pidProfilesMutable(0)->I8[PIDVEL] = 55;
-	pidProfilesMutable(0)->D8[PIDVEL] = 75;
+	pidProfilesMutable(0)->pid[PID_ROLL].P = 43;
+	pidProfilesMutable(0)->pid[PID_ROLL].I = 50;
+	pidProfilesMutable(0)->pid[PID_ROLL].D = 20;
+	pidProfilesMutable(0)->pid[PID_PITCH].P = 60;
+	pidProfilesMutable(0)->pid[PID_PITCH].I = 55;
+	pidProfilesMutable(0)->pid[PID_PITCH].D = 19;
+	pidProfilesMutable(0)->pid[PID_YAW].P = 80;
+	pidProfilesMutable(0)->pid[PID_YAW].I = 55;
+	pidProfilesMutable(0)->pid[PID_YAW].D = 20;
+	pidProfilesMutable(0)->pid[PID_ALT].P = 50;
+	pidProfilesMutable(0)->pid[PID_ALT].I = 0;
+	pidProfilesMutable(0)->pid[PID_ALT].D = 0;
+	pidProfilesMutable(0)->pid[PID_POS].P = 15;
+	pidProfilesMutable(0)->pid[PID_POS].I = 0;
+	pidProfilesMutable(0)->pid[PID_POS].D = 0;
+	pidProfilesMutable(0)->pid[PID_POSR].P = 34;
+	pidProfilesMutable(0)->pid[PID_POSR].I = 14;
+	pidProfilesMutable(0)->pid[PID_POSR].D = 53;
+	pidProfilesMutable(0)->pid[PID_NAVR].P = 25;
+	pidProfilesMutable(0)->pid[PID_NAVR].I = 33;
+	pidProfilesMutable(0)->pid[PID_NAVR].D = 83;
+	pidProfilesMutable(0)->pid[PID_LEVEL].P = 50;
+	pidProfilesMutable(0)->pid[PID_LEVEL].I = 50;
+	pidProfilesMutable(0)->pid[PID_LEVEL].D = 100;
+	pidProfilesMutable(0)->pid[PID_MAG].P = 40;
+	pidProfilesMutable(0)->pid[PID_VEL].P = 55;
+	pidProfilesMutable(0)->pid[PID_VEL].I = 55;
+	pidProfilesMutable(0)->pid[PID_VEL].D = 75;
 
 	
 	// Preset Port assignments
